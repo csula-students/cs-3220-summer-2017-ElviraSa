@@ -1,0 +1,68 @@
+header{
+	width: *;
+	height: 250 px;
+background-color: #e1bee7;
+display: flex;	
+}
+header .logo{
+	flex:1;
+	order:1;
+	width:150px;
+	height:150px;
+
+}
+header h1{
+	flex:3;
+	order:2;
+text-align: center;
+font-size: 50px
+font-style: italic;
+color: #7b1fa2;
+}
+header nav{
+	flex:2;
+	order:3;
+	text-align: right;
+	font-size:30px;
+
+}
+table{
+	width: 100%;
+	
+
+}
+ th{
+
+	border: 1px solid #999;
+  padding: 0.5rem;
+
+}
+}
+
+td {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+
+main{
+	width: *;
+	height: 600px;
+	background-color: #ffebee;
+
+
+}
+
+
+footer{
+width: *;
+	height: 100px;
+	background-color: #e1bee7;
+}
+
+footer h5{
+	text-align: left;
+	font-style: italic;
+	text-align: left;
+	font-size: 25px;
+	color: #7b1fa2;
+}
