@@ -26,7 +26,7 @@ header nav{
 	font-size:30px;
 
 }
-<<<<<<< HEAD
+
 .items{
 	
 	text-align: left;
@@ -40,7 +40,7 @@ th,td{
 	border: 1px solid #999;
   padding: 0.5rem;
   text-align:left;
-=======
+
 table{
 	width: 100%;
 	
@@ -57,7 +57,6 @@ table{
 td {
   border: 1px solid #999;
   padding: 0.5rem;
->>>>>>> 263a5c8f19f348d2f52fbe26020c0e7dbb5833d9
 }
 
 main{
@@ -67,7 +66,6 @@ main{
 
 
 }
-<<<<<<< HEAD
 .submit{ 
 background-color:#DA70D6;
     border: none;
@@ -78,9 +76,6 @@ background-color:#DA70D6;
     display: inline-block;
     font-size: 16px;
 }
-=======
-
->>>>>>> 263a5c8f19f348d2f52fbe26020c0e7dbb5833d9
 
 footer{
 width: *;
