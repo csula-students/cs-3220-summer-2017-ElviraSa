@@ -59,7 +59,7 @@
     removeItem(item) {
             // TODO: logic to remove an item from cart
             // call render method when the item is removed to update view
-       var temp=this.items;
+       var temp=this.store.cartItems;
        temp=temp.filter(a=>a !== temp[item]);
        console.log(temp);
       
@@ -67,10 +67,8 @@
             this.render();
       
         }
-    
-        placeOrder() {
-            
-        }
+          
+        
 
         // render a list of item under root element
         render() {
@@ -87,7 +85,7 @@
                 <td>${dataset[i].name}</td>
                 <td>${dataset[i].price}</td>
                 <td>${dataset[i].quantity}</td>
-                <td><button data-name="${i}" class="delete-button">Delete</td>
+                <td><button data-id="${i}" class="delete-button">Delete</td>
             <tr>`;
             }
             tbody.innerHTML = tbodyText;
@@ -96,7 +94,7 @@ deleteButtons.forEach(btn => {
     btn.addEventListener('click', () => {
   //      alert(btn.dataset.name);
     
-        this.removeItem(btn.dataset.name);
+        this.removeItem(btn.dataset.id);
     });
 });
         }

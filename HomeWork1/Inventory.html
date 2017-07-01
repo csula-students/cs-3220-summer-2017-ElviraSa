@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+    <header>
+        <h1 class="titele">Elvira's Bakery - Admin</h1>
+        <img class="logo" src="http://www.alessibakeries.com/wp-content/uploads/2016/03/bakery-deli-Button-1.jpg" alt="Bakery">
+    </header>
+    <main>
+        <h1>Existing Food Items</h1>
+        <table class="Inventory">
+            <thead>
+                <tr>
+                    <th>Created</th>
+                    <th>Item</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="newItem">
+                <tr class="newItem-Tr" data-date="June 09 12.00pm" data-img="http://media.gettyimages.com/photos/creme-brulee-picture-id155416240" data-name="Creme Brulee">
+                    <td>June 09 12.00pm</td>
+                    <td>
+                        <img src="http://media.gettyimages.com/photos/creme-brulee-picture-id155416240" alt="Cream Brulee" style="width:100px;height:100px;">
+                        <h3> Creme Brulee</h3>
+                    </td>
+                    <td><button class="delete" data-name="Creme Brulee"">Delete</button></td>
+                </tr>
+                <tr class="newItem-Tr" data-date="June 09 12.00pm" data-img="http://goodtoknow.media.ipcdigital.co.uk/111/00001366c/13a0/Chocolate-brownies.jpg" data-name="Chocolate Brownie">
+                    <td>June 09 12.00pm</td>
+                    <td>
+                        <img src="http://goodtoknow.media.ipcdigital.co.uk/111/00001366c/13a0/Chocolate-brownies.jpg" style="width:100px;height:100px;">
+                        <h3>Chocolate Brownie</h3>
+                    </td>
+                    <td><button class="delete" data-name="Chocolate Brownie">Delete</button></td>
+                </tr>
+                <tr class="newItem-Tr" data-date="June 09 12.00pm" data-img="https://images-gmi-pmc.edge-generalmills.com/eb52c020-c145-440c-8445-911f133c0096.jpg" data-name="Chocolate Chip Cookie">
+                    <td>June 09 12.00pm</td>
+                    <td>
+                        <img src="https://images-gmi-pmc.edge-generalmills.com/eb52c020-c145-440c-8445-911f133c0096.jpg"
+                             style="width:100px;height:100px;">
+                        <h3>Chocolate Chip Cookie</h3>
+                    </td>
+                    <td><button class="delete" data-name="Chocolate Chip Cookie">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <section class="checkoutSection">
+            <p>
+                <a id="addNewFood" href="Creat-food-item.html" target="_blank"> Add New Food</a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <h5> 2017 Elvira's Bakery</h5>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

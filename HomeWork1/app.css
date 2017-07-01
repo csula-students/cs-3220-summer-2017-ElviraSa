@@ -1,0 +1,242 @@
+header{
+	width: *;
+	height: 250 px;
+    background-color: #e1bee7;
+    display: flex;	
+}
+header .logo{
+	flex:1;
+	order:1;
+	width:150px;
+	height:150px;
+
+}
+header h1{
+	flex:3;
+	order:2;
+    text-align: center;
+    font-size: 50px
+    font-style: italic;
+    color: #7b1fa2;
+}
+header nav{
+	flex:2;
+	order:3;
+	text-align: right;
+	font-size:30px;
+
+}
+
+.items{
+	
+	text-align: left;
+	
+}
+table{
+	width: 100%;
+}
+
+th,td{
+	border: 1px solid #999;
+  padding: 0.5rem;
+  text-align:left;
+} 
+
+table{
+	width: 100%;
+	
+
+}
+th{
+
+	border: 1px solid #999;
+  padding: 0.5rem;
+
+}
+}
+
+td {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+
+main{
+	width: *;
+	height: 800px;
+	background-color: #ffebee;
+
+
+}
+.submit{ 
+    background-color:#DA70D6;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+}
+#menuList li {
+    display: table-cell;
+    list-style-type: none;
+    padding-right: 20px;
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+}
+.ingredient {
+    margin:20px; text-align:left;
+}
+#menuList {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.checkoutSection {
+
+    margin:25px;}
+    header {
+        background-color: #e1bee7;
+        display: flex;
+    }
+
+    header .logo {
+        flex: 1;
+        order: 1;
+        width: 150px;
+        height: 150px;
+    }
+
+    header h1 {
+        flex: 3;
+        order: 2;
+        text-align: center;
+        font-size: 50px;
+        font-style: italic;
+        color: #7b1fa2;
+    }
+
+    header nav {
+        flex: 2;
+        order: 3;
+        text-align: right;
+        font-size: 30px;
+    }
+
+
+
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #999;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+    }
+
+}
+
+td {
+    border: 1px solid #999;
+    padding: 0.5rem;
+}
+
+main {
+
+    height: 800px;
+    background-color: #ffebee;
+}
+
+footer {
+
+    height: 100px;
+    background-color: #e1bee7;
+}
+
+footer h5 {
+    text-align: left;
+    font-style: italic;
+    text-align: left;
+    font-size: 25px;
+    color: #7b1fa2;
+}
+
+.checkoutButton {
+    background-color: white;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px
+}
+#checkout-button-final {
+    text-decoration: none;
+    font: medium;
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: white;
+    border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+}
+#checkout-button-submit {
+    text-decoration: none;
+    font: medium;
+    margin-left:-15px;
+    padding:8px;
+    background-color: white;
+    border-width: 5px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+}
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+footer{
+    width: *;
+    height: 100px;
+    background-color: #e1bee7;
+}
+
+footer h5{
+	text-align: left;
+	font-style: italic;
+	text-align: left;
+	font-size: 25px;
+	color: #7b1fa2;
+}
+.newFood{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    font-style: italic;
+    font-size: 18px;
+    
+}
+.newFood #addfood {
+    background-color: #DA70D6;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+    bottom: 1cm;
+    right: 1cm;
+
+}
+#descrip{
+    overflow-wrap: normal;
+}
+
