@@ -230,12 +230,12 @@ class Inventory {
 
    //ss     console.log(item);
 
-        var food = this.store.inventoryItems;
-        for (var i = 0; i < food.length; i++) {
-            if (food[i].name === item)
-                food.splice(i, 1);
+   var food = this.store.inventoryItems;
+   for (var i = 0; i < food.length; i++) {
+     if (food[i].name === item)
+         food.splice(i, 1);
 
-        }
+ }
 
        // alert(item);
        this.store.inventoryItems = food;
@@ -276,7 +276,7 @@ render() {
             <tr>`;
         }
         if(dataset2){
-           for (var i = 0; i < dataset2.length; i++) {
+         for (var i = 0; i < dataset2.length; i++) {
             tbodyText = tbodyText + `<tr class="newItem-Tr" data-img="${dataset2[i].image}" data-name="${dataset2[i].name}" data-date="${dataset2[i].created}">
             <td>${dataset2[i].created}</td>
             <td><img src="${dataset2[i].image}" style="width:100px;height:100px;"><h3>${dataset2[i].name}</h3></td> 
@@ -285,10 +285,10 @@ render() {
         }
     }
     if(tbody)
-       tbody.innerHTML = tbodyText;
+     tbody.innerHTML = tbodyText;
 
-   let deleteButtons = document.querySelectorAll('.delete');
-   deleteButtons.forEach(btn => {
+ let deleteButtons = document.querySelectorAll('.delete');
+ deleteButtons.forEach(btn => {
     btn.addEventListener('click', () => {
 
         this.removeItem(btn.dataset.name);
@@ -313,39 +313,56 @@ class Menu {
 
     render() {
         // TODO: render a list of food menu from store using innerHTML
-        var  store=this.store.foods;
-        var menuList = document.querySelector('.menuList');
+        var  dataset=this.store.foods;
         
+        var menuList = document.querySelector('#newFood');
+        if (dataset===null)
+            return;
 
+        var menuListText = '';
+        for (var i=0; i<dataset.length; i++){
+            alert(dataset[i].image);
+            menuListText = menuListText + 
+           
+        `
+            <img src="${dataset[i].image}" style="width:100px;height:100px">
+            <h3>${dataset[i].name}</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 
+            <h4>Description:</h4><p>${dataset[i].Description}</p>
+            <h4>Ingredients</h4><p>${dataset[i].Ingredients[i].ingredients}
+            </p><button class="checkout-button" data-name="${dataset[i].name}" data-img="${dataset[i].image}">Add to cart</button>
+            </li>`
+        }
+
+        menuList.innerHTML = menuListText;
 
     }
-}
 
+}
 class CreateFood {
     constructor(root, store) {
-        this.root = root; // root should be the container of the form itself
-        this.store = store;
-        this.init();
-       // alert('hello');
+                this.root = root; // root should be the container of the form itself
+                this.store = store;
+                this.init();
+                // alert('hello');
 
-   }
-   addIngredient(){
-     let ingredient= this.store.ingredient || []
+            }
+            addIngredient(){
+               let ingredient= this.store.ingredient || []
 
-     var ulClass=document.querySelector('.Ingredient');
-     var ingredientValue=document.querySelector('#foodIngr').value;
-          // alert(ingredientValue);
-          ingredient.push({ingredients: ingredientValue});
-          this.store.ingredient=ingredient;
-          var tbodyText = '';
-          console.log(this.store.ingredient);
-          ulClass.innerHTML='<li class="ingredientLi">${ingredientValue}</li>';
-          for (var i = 0; i < ingredient.length; i++) {
-            tbodyText = tbodyText + `<li class="ingredientLi">${ingredient[i].ingredients}</li>`;
-        }
-        ulClass.innerHTML = tbodyText;
-    }   
-    render(){
+               var ulClass=document.querySelector('.Ingredient');
+               var ingredientValue=document.querySelector('#foodIngr').value;
+               // alert(ingredientValue);
+               ingredient.push({ingredients: ingredientValue});
+               this.store.ingredient=ingredient;
+               var tbodyText = '';
+               console.log(this.store.ingredient);
+               ulClass.innerHTML='<li class="ingredientLi">${ingredientValue}</li>';
+               for (var i = 0; i < ingredient.length; i++) {
+                tbodyText = tbodyText + `<li class="ingredientLi">${ingredient[i].ingredients}</li>`;
+            }
+            ulClass.innerHTML = tbodyText;
+        }   
+        render(){
 
       //console.log(this.store.ingredient);
       let tbody = document.querySelector('.Ingredient');
@@ -398,10 +415,10 @@ class CreateFood {
     });
        this.store.foods=newFood;
        this.render();
-       console.log(newFood);
+  //     console.log(newFood);
 
 
-   }
+}
 }
 // DOMContentLoaded event will allow us to run the following function when
 // everything is ready. Think of the following code will only be executed by
@@ -415,9 +432,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let inventoryTableRow = document.querySelectorAll('.newItem-Tr');
     let addfood=document.querySelector('.newFood');
     let store = new Store(window.localStorage);
+
+    let menuList =document.querySelector('#newFood')
     // if (table) {
     //     new StatusTable(table, store);
     // }
+  //  alert(menuList);
+    if(menuList)
+        new Menu(menuList,store);
+
     if(addfood)
         new CreateFood(addfood,store);
 

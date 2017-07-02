@@ -82,6 +82,15 @@ main{
     padding: 0.5rem;
     text-align: left;
 }
+#newFood{
+    display: table-cell;
+    list-style-type: none;
+    padding-right: 20px;
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+
+}
 .ingredient {
     margin:20px; text-align:left;
 }
