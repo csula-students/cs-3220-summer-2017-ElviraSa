@@ -11,14 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 @WebServlet(urlPatterns = { "/admin/foods/edit" })
 public class EditFoodAdminServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		List<CreatFoodItem> entries = (List<CreatFoodItem>) getServletContext().getAttribute("entries");
-		
+
 		CreatFoodItem leEntry = null;
 		for (CreatFoodItem entry : entries) {
 			if (entry.getId() == id) {
@@ -42,9 +40,8 @@ public class EditFoodAdminServlet extends HttpServlet {
 				+ "<td><a href='delete?id=" + leEntry.getId() + "'>Delete</a> " + "</td>" + "</tr>");
 
 		out.println("</table>");
-out.println("<a href='menu'>back to menu</a>");
+		out.println("<a href='menu'>back to menu</a>");
 
 	}
-	
-} 
 
+}

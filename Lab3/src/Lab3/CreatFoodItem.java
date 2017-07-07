@@ -6,11 +6,9 @@ public class CreatFoodItem {
 	final String description;
 	final String imageUrl;
 	final String price;
-	 
-
 
 	public CreatFoodItem(int id, String name, String description, String imageUrl, String price) {
-	
+
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -18,35 +16,24 @@ public class CreatFoodItem {
 		this.price = price;
 	}
 
-
-
 	public int getId() {
 		return id;
 	}
-
-
 
 	public String getName() {
 		return name;
 	}
 
-
-
 	public String getDescription() {
 		return description;
 	}
-
-
 
 	public String getImageUrl() {
 		return imageUrl;
 	}
 
-
-
 	public String getPrice() {
 		return price;
 	}
-	
 
 }

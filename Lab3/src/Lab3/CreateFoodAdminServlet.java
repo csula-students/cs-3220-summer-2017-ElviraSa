@@ -10,15 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-
-
-@WebServlet(urlPatterns={"/admin/foods/creat"})
+@WebServlet(urlPatterns = { "/admin/foods/creat" })
 
 public class CreateFoodAdminServlet extends HttpServlet {
-	public void doGet( HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<h1>Creat Food Item</h1>");
@@ -35,14 +30,14 @@ public class CreateFoodAdminServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<CreatFoodItem> entries = (List<CreatFoodItem>) getServletContext().getAttribute("entries");
-		entries.add(new CreatFoodItem(entries.size(), request.getParameter("name"), request.getParameter("description"),request.getParameter("url"),request.getParameter("price")));
+		entries.add(new CreatFoodItem(entries.size(), request.getParameter("name"), request.getParameter("description"),
+				request.getParameter("url"), request.getParameter("price")));
 		getServletContext().setAttribute("entries", entries);
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
+
 		out.println("<a location.href='list'> go to Inventory</a>");
-			
-		
+
 	}
-	
+
 }

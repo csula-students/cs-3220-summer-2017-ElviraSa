@@ -10,12 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet (urlPatterns = {"/admin/foods/list"})
+@WebServlet(urlPatterns = { "/admin/foods/list" })
 public class FoodItemListAdminServlet extends HttpServlet {
-	
-	public void doGet( HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		List<CreatFoodItem> entries = (List<CreatFoodItem>) getServletContext().getAttribute("entries");
 		// tell browser this is html document
@@ -27,16 +25,15 @@ public class FoodItemListAdminServlet extends HttpServlet {
 		out.println("<h1> Inventory </h1>");
 		out.println("<table>");
 		out.println("<thead>" + "<tr>" + "<th>Image</th>" + "<th>Name</th?>" + "<th>Description</th>" + "<th>Price</th>"
-				+ "<th>Delete</th>"+"</tr>"+"</thead>");
+				+ "<th>Delete</th>" + "</tr>" + "</thead>");
 		for (CreatFoodItem entry : entries) {
-			out.println("<tr>" + "<td>"+ "<img src=" + entry.getImageUrl() + "</td>" + "<td>" + entry.getName() + "</td>" + "<td>"
-					+ entry.getDescription() + "</td>" + "<td>" + entry.getPrice() + "</td>" 
-					+ "<td><a href='delete?id=" + entry.getId() + "'>Delete</a> " + "</td>"+"</tr>");
+			out.println("<tr>" + "<td>" + "<img src=" + entry.getImageUrl() + "</td>" + "<td>" + entry.getName()
+					+ "</td>" + "<td>" + entry.getDescription() + "</td>" + "<td>" + entry.getPrice() + "</td>"
+					+ "<td><a href='delete?id=" + entry.getId() + "'>Delete</a> " + "</td>" + "</tr>");
 		}
 		out.println("</table>");
-		out.println("<a href='creat" +"'>Creat Food</a> ");
-		
-		
+		out.println("<a href='creat" + "'>Creat Food</a> ");
+
 	}
-	
+
 }

@@ -21,7 +21,7 @@ public class FoodMenuServlet extends HttpServlet {
 				"http://media.gettyimages.com/photos/creme-brulee-picture-id155416240", "3.00"));
 		entries.add(new CreatFoodItem(entries.size(), "Chocolate Brownie",
 				"A brownie is a square baked dessert. It is a cross between a cake and a soft cookie in texture and comes in a variety of forms.",
-				"http://goodtoknow.media.ipcdigital.co.uk/111/00001366c/13a0/Chocolate-brownies.jpg"," 2.50"));
+				"http://goodtoknow.media.ipcdigital.co.uk/111/00001366c/13a0/Chocolate-brownies.jpg", " 2.50"));
 		entries.add(new CreatFoodItem(entries.size(), "Chocolate Chip",
 				"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips",
 				"ttps://images-gmi-pmc.edge-generalmills.com/eb52c020-c145-440c-8445-911f133c0096.jpg", "1.50"));
@@ -42,15 +42,15 @@ public class FoodMenuServlet extends HttpServlet {
 		out.println("<h2> Menu:</h2>");
 		out.println("<table>");
 		out.println("<thead>" + "<tr>" + "<th>Image</th>" + "<th>Name</th?>" + "<th>Description</th>" + "<th>Price</th>"
-				+ "<th>Add</th>"+"</tr>"+"</thead>");
+				+ "<th>Add</th>" + "</tr>" + "</thead>");
 		for (CreatFoodItem entry : entries) {
-			out.println("<tr>" + "<td>"+ "<img src=" + entry.getImageUrl() + "</td>" + "<td>" + entry.getName() + "</td>" + "<td>"
-					+ entry.getDescription() + "</td>" + "<td>" + entry.getPrice() + "</td>" 
-					+ "<td><a href='edit?id=" + entry.getId() + "'>Add</a> " + "</td>"+"</tr>");
+			out.println("<tr>" + "<td>" + "<img src=" + entry.getImageUrl() + "</td>" + "<td>" + entry.getName()
+					+ "</td>" + "<td>" + entry.getDescription() + "</td>" + "<td>" + entry.getPrice() + "</td>"
+					+ "<td><a href='edit?id=" + entry.getId() + "'>Add</a> " + "</td>" + "</tr>");
 		}
 		out.println("</table>");
-		out.println("<a href='creat" +"'>Creat Food</a> ");
-		out.println("<a href='list" +"'>Inventory</a> ");
-		
+		out.println("<a href='creat" + "'>Creat Food</a> ");
+		out.println("<a href='list" + "'>Inventory</a> ");
+
 	}
 }
