@@ -12,25 +12,37 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/CreateFoodAdminServlet")
+
+
+@WebServlet(urlPatterns={"/admin/foods/creat"})
 
 public class CreateFoodAdminServlet extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		out.println("<h1>Creat Food Item</h1>");
 		out.println("<form method=\"post\">");
-		
 		out.println("Name: <input name='name' type='text'/></br>");
+		out.println("Description:</br>");
 		out.println("<textarea name='description'></textarea></br>");
-		out.println("Image:<input name = 'url' type='url'></input> </br>");
-		out.println("Price<input name='price' type='text'/></br>");
+		out.println("Image URL:<input name = 'url' type='url'></input> </br>");
+		out.println("Price<input name='price' type='number'/></br>");
+		out.println("<a href='list'>Add</a> ");
 		out.println("</form>");
 	}
 
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<CreatFoodItem> entries = (List<CreatFoodItem>) getServletContext().getAttribute("entries");
+		entries.add(new CreatFoodItem(entries.size(), request.getParameter("name"), request.getParameter("description"),request.getParameter("url"),request.getParameter("price")));
+		getServletContext().setAttribute("entries", entries);
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
 		
+		out.println("<a location.href='list'> go to Inventory</a>");
+			
 		
 	}
+	
 }

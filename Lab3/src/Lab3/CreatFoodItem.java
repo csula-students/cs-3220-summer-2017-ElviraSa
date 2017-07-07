@@ -5,12 +5,12 @@ public class CreatFoodItem {
 	final String name;
 	final String description;
 	final String imageUrl;
-	final double price;
+	final String price;
 	 
 
 
-	public CreatFoodItem(int id, String name, String description, String imageUrl, double price) {
-		super();
+	public CreatFoodItem(int id, String name, String description, String imageUrl, String price) {
+	
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -44,7 +44,7 @@ public class CreatFoodItem {
 
 
 
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 	

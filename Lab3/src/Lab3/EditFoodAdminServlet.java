@@ -1,41 +1,50 @@
 package Lab3;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class EditFoodAdminServlet
- */
-@WebServlet("/EditFoodAdminServlet")
+
+
+@WebServlet(urlPatterns = { "/admin/foods/edit" })
 public class EditFoodAdminServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EditFoodAdminServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		List<CreatFoodItem> entries = (List<CreatFoodItem>) getServletContext().getAttribute("entries");
+		
+		CreatFoodItem leEntry = null;
+		for (CreatFoodItem entry : entries) {
+			if (entry.getId() == id) {
+				leEntry = entry;
+			}
+		}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<head>");
+		out.println("<style>body { " + "}</style>");
+		out.println("</head>");
+
+		out.println("<h1> Order </h1>");
+		out.println("<table>");
+		out.println("<thead>" + "<tr>" + "<th>Image</th>" + "<th>Name</th?>" + "<th>Description</th>" + "<th>Price</th>"
+				+ "<th>Delete</th>" + "</tr>" + "</thead>");
+
+		out.println("<tr>" + "<td>" + "<img src=" + leEntry.getImageUrl() + "</td>" + "<td>" + leEntry.getName()
+				+ "</td>" + "<td>" + leEntry.getDescription() + "</td>" + "<td>" + leEntry.getPrice() + "</td>"
+				+ "<td><a href='delete?id=" + leEntry.getId() + "'>Delete</a> " + "</td>" + "</tr>");
+
+		out.println("</table>");
+out.println("<a href='menu'>back to menu</a>");
+
 	}
+	
+} 
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
-}
