@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = { "/admin/foods/edit" })
 public class EditFoodAdminServlet extends HttpServlet {
+
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		List<CreatFoodItem> entries = (List<CreatFoodItem>) getServletContext().getAttribute("entries");
@@ -35,9 +36,10 @@ public class EditFoodAdminServlet extends HttpServlet {
 		out.println("<thead>" + "<tr>" + "<th>Image</th>" + "<th>Name</th?>" + "<th>Description</th>" + "<th>Price</th>"
 				+ "<th>Delete</th>" + "</tr>" + "</thead>");
 
-		out.println("<tr>" + "<td>" + "<img src=" + leEntry.getImageUrl() + "</td>" + "<td>" + leEntry.getName()
-				+ "</td>" + "<td>" + leEntry.getDescription() + "</td>" + "<td>" + leEntry.getPrice() + "</td>"
-				+ "<td><a href='delete?id=" + leEntry.getId() + "'>Delete</a> " + "</td>" + "</tr>");
+		out.println("<tr>" + "<td><img src='" + leEntry.getImageUrl() + "'width='70' height='70'>" + "</td>" + "<td>"
+				+ leEntry.getName() + "</td>" + "<td>" + leEntry.getDescription() + "</td>" + "<td>"
+				+ leEntry.getPrice() + "</td>" + "<td><a href='delete?id=" + leEntry.getId() + "'>Delete</a> " + "</td>"
+				+ "</tr>");
 
 		out.println("</table>");
 		out.println("<a href='menu'>back to menu</a>");

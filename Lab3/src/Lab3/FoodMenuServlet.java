@@ -24,7 +24,7 @@ public class FoodMenuServlet extends HttpServlet {
 				"http://goodtoknow.media.ipcdigital.co.uk/111/00001366c/13a0/Chocolate-brownies.jpg", " 2.50"));
 		entries.add(new CreatFoodItem(entries.size(), "Chocolate Chip",
 				"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips",
-				"ttps://images-gmi-pmc.edge-generalmills.com/eb52c020-c145-440c-8445-911f133c0096.jpg", "1.50"));
+				"https://images-gmi-pmc.edge-generalmills.com/eb52c020-c145-440c-8445-911f133c0096.jpg", "1.50"));
 		getServletContext().setAttribute("entries", entries);
 	}
 
@@ -44,9 +44,9 @@ public class FoodMenuServlet extends HttpServlet {
 		out.println("<thead>" + "<tr>" + "<th>Image</th>" + "<th>Name</th?>" + "<th>Description</th>" + "<th>Price</th>"
 				+ "<th>Add</th>" + "</tr>" + "</thead>");
 		for (CreatFoodItem entry : entries) {
-			out.println("<tr>" + "<td>" + "<img src=" + entry.getImageUrl() + "</td>" + "<td>" + entry.getName()
-					+ "</td>" + "<td>" + entry.getDescription() + "</td>" + "<td>" + entry.getPrice() + "</td>"
-					+ "<td><a href='edit?id=" + entry.getId() + "'>Add</a> " + "</td>" + "</tr>");
+			out.println("<tr>" + "<td><img src='" + entry.getImageUrl() + "'width='70' height='70'>" + "</td>" + "<td>"
+					+ entry.getName() + "</td>" + "<td>" + entry.getDescription() + "</td>" + "<td>" + entry.getPrice()
+					+ "</td>" + "<td><a href='edit?id=" + entry.getId() + "'>Add</a> " + "</td>" + "</tr>");
 		}
 		out.println("</table>");
 		out.println("<a href='creat" + "'>Creat Food</a> ");
